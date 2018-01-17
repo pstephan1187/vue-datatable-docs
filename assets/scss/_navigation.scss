@@ -1,0 +1,85 @@
+.navbar {
+    @apply flex h-16 bg-blue-dark text-blue-lightest;
+
+    .brand {
+        @apply flex flex-grow p-4 items-center;
+    }
+
+    .menu {
+        @apply flex flex-grow p-4 justify-end;
+
+        .link {
+            @apply flex -my-4 p-4 h-16 items-center text-blue-lightest;
+
+            &:hover {
+                @apply bg-blue-darker;
+            }
+        }
+    }
+}
+
+@screen sm {
+.navbar {
+
+    .menu {
+
+        .link.menu-toggle {
+            @apply hidden;
+        }
+    }
+}
+}
+
+.footer-bar {
+    @apply flex justify-between bg-grey p-4 bg-blue-dark text-blue-lightest;
+}
+
+.sidebar-nav {
+    @apply list-reset -mx-4;
+
+    li {
+        a {
+            @apply p-4 block;
+
+            &:hover {
+                @apply bg-blue text-blue-lightest;
+            }
+        }
+
+        ul {
+            @apply list-reset;
+
+            li {
+                a {
+                    @apply pl-8;
+                }
+            }
+        }
+    }
+}
+
+// @screen sm {
+// .navbar {
+
+//     .brand {
+//         @apply .flex-no-grow .w-1/4;
+//     }
+
+//     .menu {
+//         @apply .flex-no-grow .w-3/4;
+//     }
+// }
+// }
+
+// @screen lg {
+// .navbar {
+
+//     .brand {
+//         @apply .w-1/6;
+//     }
+
+//     .menu {
+//         @apply .w-5/6;
+//     }
+// }
+// }

@@ -1,0 +1,100 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Vue Datatable Documentation</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="SitePoint">
+
+    <link rel="stylesheet" href="/css/all.css?v=1.0">
+</head>
+
+<body>
+    <div id="app">
+        <div class="navbar">
+            <div class="brand">
+                <h2>Vue-datatable</h2>
+            </div>
+            <div class="menu">
+                <a href="/" class="link">Docs</a>
+                <a href="https://github.com/pstephan1187/vue-datatable" target="_blank" class="link">Repo</a>
+                <a href="https://www.npmjs.com/package/vue-datatable" target="_blank" class="link">NPM</a>
+                <a href="https://www.patrickstephan.me/" target="_blank" class="link">Author</a>
+                <button class="link menu-toggle" @click="show_menu = !show_menu">M</button>
+            </div>
+        </div>
+
+        <div class="content-container">
+            <div :class="{sidebar: true, show: show_menu}">
+                <div class="search-box group">
+                    <span class="icon">
+                        <i class="fa fa-search"></i>
+                    </span>
+                    <div class="input-container">
+                        <input type="text">
+                    </div>
+                </div>
+
+                <ul class="sidebar-nav">
+                    <li><router-link to="/quick-start">Quick Start</router-link></li>
+                    <li><router-link to="/installation">Installation</router-link></li>
+                    <li>
+                        <a href="#">Usage</a>
+
+                        <ul>
+                            <li><a href="#">Minimum Usage</a></li>
+                            <li><a href="#">Basic Usage</a></li>
+                            <li><a href="#">AJAX</a></li>
+                            <li><a href="#">Custom Templates</a></li>
+                            <li><a href="#">Multiple Tables</a></li>
+                            <li><a href="#">Page Styles</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">API</a>
+
+                        <ul class="list-reset">
+                            <li><a href="#">Factory</a></li>
+                            <li><a href="#">Props</a></li>
+                            <li><a href="#">Events</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="documentation">
+                <router-view></router-view>
+                <div class="code-bg">
+                    <affix relative-element-selector=".code-bg" :offset="{top: 0, bottom: 0}">
+                        <div class="w-full bg-black text-grey-light p-4 self-start flex justify-between">
+                            <h3 class="self-center">Example Code</h3>
+
+                            <div class="select-box">
+                                <select v-model="show_code" @change="updateCodeView">
+                                    <option value="html">HTML</option>
+                                    <option value="javascript">Javascript</option>
+                                </select>
+                            </div>
+                        </div>
+                    </affix>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bar">
+            <span>
+                Site Designed and Built by Patrick Stephan
+            </span>
+
+            <span>
+                Built using Tailwind CSS and Vue.js
+            </span>
+        </div>
+    </div>
+
+    <script src="/js/app.js?v=1.0"></script>
+</body>
+
+</html>

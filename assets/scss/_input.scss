@@ -1,0 +1,48 @@
+.select-box {
+    @apply .bg-grey-dark .border-2 .border-grey .rounded;
+    position: relative;
+
+    select {
+        @apply .relative .appearance-none .bg-transparent .p-1;
+        z-index: 2;
+    }
+
+    &:after {
+        content: "\f078";
+        font-family: FontAwesome;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: inherit;
+        position: absolute;
+        top: 0.25rem;
+        right: 0.25rem;
+        z-index: 1;
+        @apply .text-grey-darkest;
+    }
+}
+
+.search-box {
+    @apply flex mb-4;
+
+    .icon {
+        @apply flex-shrink bg-blue-lightest border-2 border-r-0 border-blue-lightest rounded rounded-r-none p-2;
+    }
+
+    .input-container {
+        @apply flex-grow flex-shrink border-2 border-l-0 border-blue-lightest rounded rounded-l-none;
+
+        input {
+            @apply w-full bg-blue-lightest appearance-none p-2 pr-0 text-grey-darker;
+        }
+    }
+
+    &:hover {
+        .icon {
+            @apply border-blue-darker;
+        }
+
+        .input-container {
+            @apply border-blue-darker;
+        }
+    }
+}
