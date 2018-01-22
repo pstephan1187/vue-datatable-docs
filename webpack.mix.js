@@ -16,6 +16,8 @@ mix
     .sass('assets/scss/app.scss', 'public/css/')
     .copy('./node_modules/font-awesome/fonts/', './public/fonts/')
     .copy('./node_modules/highlight.js/styles/tomorrow-night-bright.css', './public/css/highlighter.css')
+    .copy('./node_modules/vuejs-datatable/dist/vuejs-datatable.js', './public/js/')
+    .copy('./assets/demonstrations/', './public/demonstrations/')
     .styles([
         'public/css/app.css',
         'public/css/highlighter.css'

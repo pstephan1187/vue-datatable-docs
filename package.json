@@ -9,8 +9,10 @@
     "production": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "font-awesome": "^4.7.0",
     "laravel-mix": "^1.7.2",
+    "strip-indent": "^2.0.0",
     "tailwindcss": "^0.4.0",
     "vue": "^2.5.13",
     "vue-affix": "^0.2.4",

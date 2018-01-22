@@ -5,14 +5,11 @@
         <div :id="section.id" v-for="section in sections" :key="section.id" class="example">
             <div v-html="section.content"></div>
 
-            <component
-                v-if="'component' in section"
-                :is="section.component.type"
-                v-bind="section.component.props"
-            ></component>
+            <iframe :src="section.demo.url" :style="{width: '100%', height: section.demo.height}"></iframe>
 
             <code-example
                 :element="'#' + section.id"
+                :demo-url="section.demo.url"
                 :examples="section.examples"
             ></code-example>
         </div>

@@ -8,7 +8,7 @@
                             v-for="example in examples"
                             :key="example.type"
                             :value="example.type"
-                        >{{ example.type_label }}</option>
+                        >{{ example.label }}</option>
                     </select>
                 </div>
             </div>
@@ -19,21 +19,25 @@
                 :key="example.type"
                 v-if="show_code == example.type"
                 v-highlightjs="example.content"
-            ><code :class="example.type_class"></code></pre>
+            ><code :class="example.type"></code></pre>
         </affix>
     </div>
 </template>
 
 <script>
+const stripIndent = require('strip-indent');
+
 export default {
     props: {
         element: String,
-        examples: Array,
+        demoUrl: String,
+        // examples: Array,
     },
     data: () => ({
         small_window_size: false,
-        show_code: 'html',
+        show_code: null,
         affix_width: 0,
+        examples: [],
     }),
     computed: {
         offset(){
@@ -77,6 +81,27 @@ export default {
         setAffixWidth(){
             this.affix_width = this.$el.offsetWidth;
         }
+    },
+    created(){
+        // Get the code examples from the demo page
+        axios.get(this.demoUrl).then(function(response){
+            let parser = new DOMParser();
+            let doc = parser.parseFromString(response.data, "text/html");
+
+            let examples = doc.querySelectorAll('[data-example]');
+
+            for(let example of examples){
+                let parsed_example = JSON.parse(example.dataset.example);
+
+                this.examples.push({
+                    type: parsed_example.type,
+                    label: parsed_example.label,
+                    content: stripIndent(example.innerHTML),
+                });
+            }
+
+            this.show_code = this.examples[0].type;
+        }.bind(this));
     },
     mounted(){
         this.detectWindowSize();

@@ -3,8 +3,10 @@ import VueRouter from 'vue-router';
 import VueHighlightJS from 'vue-highlightjs'
 import VueAffix from 'vue-affix';
 import DatatableFactory from 'vuejs-datatable';
+import axios from 'axios';
 
 window.Vue = Vue;
+window.axios = axios;
 
 Vue.use(VueRouter);
 Vue.use(VueHighlightJS);
@@ -18,7 +20,7 @@ const routes = [
     {
         path: '/quick-start',
         component: Doc,
-        props: require('../pages/examples/quick-start/index.js')
+        props: require('../pages/examples/quick-start.js')
     },
     { path: '/installation', component: Installation }
 ];
