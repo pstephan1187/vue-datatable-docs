@@ -4,29 +4,33 @@
             <div class="bg-black text-grey-light p-4 mb-4">
                 <div class="select-box">
                     <select v-model="show_code" @change="resetAffix">
-                        <option value="html">HTML</option>
-                        <option value="javascript">Javascript</option>
+                        <option
+                            v-for="example in examples"
+                            :key="example.type"
+                            :value="example.type"
+                        >{{ example.type_label }}</option>
                     </select>
                 </div>
             </div>
 
 
-            <pre v-if="show_code == 'html'" v-highlightjs="comp"><code class="xml"></code></pre>
-            <pre v-if="show_code == 'javascript'" v-highlightjs="comp2"><code class="javascript"></code></pre>
+            <pre
+                v-for="example in examples"
+                :key="example.type"
+                v-if="show_code == example.type"
+                v-highlightjs="example.content"
+            ><code :class="example.type_class"></code></pre>
         </affix>
     </div>
 </template>
 
 <script>
-import part1 from '../pages/examples/quick-start/part1.js';
-
 export default {
     props: {
-        element: String
+        element: String,
+        examples: Array,
     },
     data: () => ({
-        comp: part1.html,
-        comp2: part1.css,
         small_window_size: false,
         show_code: 'html',
         affix_width: 0,

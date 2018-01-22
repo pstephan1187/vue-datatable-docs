@@ -1,6 +1,4 @@
-export default {
-    html: `<datatable :columns="columns" :data="rows"></datatable>`,
-    css: `new Vue({
+module.exports = `new Vue({
   el: "#vue-element",
   data: {
     table_columns: [
@@ -30,5 +28,4 @@ export default {
       //...
     ]
   }
-});`
-}
+});`;

@@ -2,16 +2,24 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VueHighlightJS from 'vue-highlightjs'
 import VueAffix from 'vue-affix';
+import DatatableFactory from 'vuejs-datatable';
+
+window.Vue = Vue;
 
 Vue.use(VueRouter);
 Vue.use(VueHighlightJS);
 Vue.use(VueAffix);
+Vue.use(DatatableFactory);
 
-const QuickStart = require('../pages/quick-start.vue');
+const Doc = require('../pages/doc.vue');
 const Installation = { template: '<div>bar</div>' };
 
 const routes = [
-    { path: '/quick-start', component: QuickStart },
+    {
+        path: '/quick-start',
+        component: Doc,
+        props: require('../pages/examples/quick-start/index.js')
+    },
     { path: '/installation', component: Installation }
 ];
 

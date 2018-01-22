@@ -23,7 +23,8 @@ mix
     .options({
         processCssUrls: false,
         postCss: [tailwindcss('./tailwind.js')],
-    });
+    })
+    .sourceMaps();
 
 // Full API
 // mix.js(src, output);
