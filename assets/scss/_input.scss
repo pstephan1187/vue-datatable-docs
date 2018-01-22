@@ -3,7 +3,7 @@
     position: relative;
 
     select {
-        @apply .relative .appearance-none .bg-transparent .p-1;
+        @apply .relative .appearance-none .bg-transparent .p-1 pr-6;
         z-index: 2;
     }
 
