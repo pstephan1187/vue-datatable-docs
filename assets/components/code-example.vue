@@ -1,14 +1,16 @@
 <template>
     <div class="code">
-        <!-- <div class="bg-black text-grey-light p-4 -m-4 mb-4">
-            <div class="select-box">
-                <select v-model="show" @change="test">
-                    <option value="html">HTML</option>
-                    <option value="javascript">Javascript</option>
-                </select>
+        <affix ref="affix" :relative-element-selector="element" :style="{width: affix_width + 'px'}" :enabled="!small_window_size" :offset="offset">
+            <div class="bg-black text-grey-light p-4 mb-4">
+                <div class="select-box">
+                    <select v-model="show_code" @change="resetAffix">
+                        <option value="html">HTML</option>
+                        <option value="javascript">Javascript</option>
+                    </select>
+                </div>
             </div>
-        </div> -->
-        <affix ref="affix" :relative-element-selector="element" :enabled="!small_window_size" :offset="{top: 60, bottom: 0}">
+
+
             <pre v-if="show_code == 'html'" v-highlightjs="comp"><code class="xml"></code></pre>
             <pre v-if="show_code == 'javascript'" v-highlightjs="comp2"><code class="javascript"></code></pre>
         </affix>
@@ -27,7 +29,17 @@ export default {
         comp2: part1.css,
         small_window_size: false,
         show_code: 'html',
+        affix_width: 0,
     }),
+    computed: {
+        offset(){
+            if(this.small_window_size){
+                return {top: 0, bottom: 0};
+            }
+
+            return {top: 59, bottom: 59};
+        }
+    },
     methods: {
         detectWindowSize(){
             this.small_window_size =
@@ -35,25 +47,35 @@ export default {
                 (typeof window.orientation !== "undefined") ||
                 (navigator.userAgent.indexOf('IEMobile') !== -1);
 
+            this.resetAffix(true);
+            this.setAffixWidth();
+        },
+        resetAffix(ignore_styles){
+            ignore_styles = typeof ignore_styles == 'boolean' && ignore_styles;
+
+            if(!ignore_styles && this.$el){
+                var affix = this.$el.querySelector('.affix');
+                affix.classList = [];
+                affix.removeAttribute("style");
+            }
+
             if(this.$refs.affix){
                 this.$refs.affix.$el.classList.add('vue-affix');
                 this.$refs.affix.affixInitialTop = this.$refs.affix.getOffsetTop(this.$refs.affix.$el);
                 this.$refs.affix.topPadding = this.$refs.affix.affixInitialTop - this.$refs.affix.getOffsetTop(this.$refs.affix.relativeElement);
                 this.$refs.affix.setDynamicVariables();
+
                 if (this.$refs.affix.scrollAffix){
                     this.$refs.affix.initScrollAffix();
                 }
             }
+        },
+        setAffixWidth(){
+            this.affix_width = this.$el.offsetWidth;
         }
     },
-    created(){
+    mounted(){
         this.detectWindowSize();
-        this.show_code = this.$root.show_code;
-
-        this.$root.$on('view-code', function(value){
-            console.log('view-code', value);
-            this.show_code = value;
-        }.bind(this));
 
         window.addEventListener('resize', this.detectWindowSize);
     }

@@ -8290,9 +8290,8 @@ button,
   background-color: #3d4852;
   margin-left: -1rem;
   margin-right: -1rem;
-  padding: 1rem;
   margin-bottom: 1rem;
-  z-index: 0;
+  z-index: 1;
   bottom: 0;
   overflow-x: auto;
 }
@@ -8346,17 +8345,13 @@ button,
   .content-container .documentation .example .code {
     color: #dae1e7;
     position: absolute;
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: -1rem;
+    width: 100%;
+    margin: 0;
     padding-top: 0;
     padding-bottom: 0;
-    width: 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-bottom: 2rem;
     right: -100%;
-    top: 0;
+    top: -59px;
+    bottom: 59px;
   }
 
   .content-container .documentation .code-bg {
@@ -8364,6 +8359,7 @@ button,
     width: 50%;
     margin-top: -1rem;
     margin-bottom: -1rem;
+    background-color: #3d4852;
     position: relative;
     z-index: 0;
   }
@@ -8472,12 +8468,10 @@ a {
 
 .vue-affix {
   width: 100%;
-  top: 0 !important;
 }
 
 .code .vue-affix.affix {
   width: 100%;
-  top: 60px !important;
 }
 
 .documentation .example .code p {

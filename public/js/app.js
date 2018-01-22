@@ -204,7 +204,7 @@ module.exports = function normalizeComponent (
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(3);
-module.exports = __webpack_require__(195);
+module.exports = __webpack_require__(196);
 
 
 /***/ }),
@@ -218,7 +218,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_highlightjs__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_highlightjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vue_highlightjs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_affix__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_affix__ = __webpack_require__(188);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_affix___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vue_affix__);
 
 
@@ -229,7 +229,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_highlightjs___default.a);
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_3_vue_affix___default.a);
 
-var QuickStart = __webpack_require__(188);
+var QuickStart = __webpack_require__(189);
 var Installation = { template: '<div>bar</div>' };
 
 var routes = [{ path: '/quick-start', component: QuickStart }, { path: '/installation', component: Installation }];
@@ -238,7 +238,7 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
     routes: routes
 });
 
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('code-example', __webpack_require__(191));
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('code-example', __webpack_require__(192));
 
 var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
     el: '#app',
@@ -31742,378 +31742,6 @@ module.exports = function(hljs) {
 /* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(189)
-/* template */
-var __vue_template__ = __webpack_require__(190)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "assets/pages/quick-start.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-45efdf39", Component.options)
-  } else {
-    hotAPI.reload("data-v-45efdf39", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 189 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {};
-    }
-});
-
-/***/ }),
-/* 190 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "content" }, [
-    _c("h2", { staticClass: "pb-4" }, [_vm._v("Quick Start")]),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "example", attrs: { id: "test-1" } },
-      [
-        _c("p", [
-          _vm._v(
-            "\n            Use the component in your HTML or template. Pass in the columns and the data to your Vue instance.\n        "
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis repellendus, omnis quidem ad dolorem aliquid. Fugit dolorem dolor ea odit omnis deleniti rerum vel, deserunt et, eius labore placeat rem.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi quis in voluptatem optio labore exercitationem ab porro unde dolorum, distinctio itaque doloribus quas maxime? Dolor, assumenda veritatis reiciendis fuga perspiciatis!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse hic neque nesciunt incidunt nemo fugit dolorum inventore nam illo tempora voluptate architecto, aspernatur ducimus, iusto doloribus quos doloremque. Beatae, deserunt."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis repellendus, omnis quidem ad dolorem aliquid. Fugit dolorem dolor ea odit omnis deleniti rerum vel, deserunt et, eius labore placeat rem.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi quis in voluptatem optio labore exercitationem ab porro unde dolorum, distinctio itaque doloribus quas maxime? Dolor, assumenda veritatis reiciendis fuga perspiciatis!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse hic neque nesciunt incidunt nemo fugit dolorum inventore nam illo tempora voluptate architecto, aspernatur ducimus, iusto doloribus quos doloremque. Beatae, deserunt."
-          )
-        ]),
-        _vm._v(" "),
-        _c("code-example", { attrs: { element: "#test-1" } })
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "example", attrs: { id: "test-2" } },
-      [
-        _c("p", [
-          _vm._v(
-            "\n            Use the component in your HTML or template. Pass in the columns and the data to your Vue instance.\n        "
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis repellendus, omnis quidem ad dolorem aliquid. Fugit dolorem dolor ea odit omnis deleniti rerum vel, deserunt et, eius labore placeat rem.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi quis in voluptatem optio labore exercitationem ab porro unde dolorum, distinctio itaque doloribus quas maxime? Dolor, assumenda veritatis reiciendis fuga perspiciatis!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse hic neque nesciunt incidunt nemo fugit dolorum inventore nam illo tempora voluptate architecto, aspernatur ducimus, iusto doloribus quos doloremque. Beatae, deserunt."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis repellendus, omnis quidem ad dolorem aliquid. Fugit dolorem dolor ea odit omnis deleniti rerum vel, deserunt et, eius labore placeat rem.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi quis in voluptatem optio labore exercitationem ab porro unde dolorum, distinctio itaque doloribus quas maxime? Dolor, assumenda veritatis reiciendis fuga perspiciatis!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse hic neque nesciunt incidunt nemo fugit dolorum inventore nam illo tempora voluptate architecto, aspernatur ducimus, iusto doloribus quos doloremque. Beatae, deserunt."
-          )
-        ]),
-        _vm._v(" "),
-        _c("code-example", { attrs: { element: "#test-2" } })
-      ],
-      1
-    )
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-45efdf39", module.exports)
-  }
-}
-
-/***/ }),
-/* 191 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(192)
-/* template */
-var __vue_template__ = __webpack_require__(194)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "assets/components/code-example.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-874aca36", Component.options)
-  } else {
-    hotAPI.reload("data-v-874aca36", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 192 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pages_examples_quick_start_part1_js__ = __webpack_require__(193);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    props: {
-        element: String
-    },
-    data: function data() {
-        return {
-            comp: __WEBPACK_IMPORTED_MODULE_0__pages_examples_quick_start_part1_js__["a" /* default */].html,
-            comp2: __WEBPACK_IMPORTED_MODULE_0__pages_examples_quick_start_part1_js__["a" /* default */].css,
-            small_window_size: false,
-            show_code: 'html'
-        };
-    },
-    methods: {
-        detectWindowSize: function detectWindowSize() {
-            this.small_window_size = window.innerWidth < 992 || typeof window.orientation !== "undefined" || navigator.userAgent.indexOf('IEMobile') !== -1;
-
-            if (this.$refs.affix) {
-                this.$refs.affix.$el.classList.add('vue-affix');
-                this.$refs.affix.affixInitialTop = this.$refs.affix.getOffsetTop(this.$refs.affix.$el);
-                this.$refs.affix.topPadding = this.$refs.affix.affixInitialTop - this.$refs.affix.getOffsetTop(this.$refs.affix.relativeElement);
-                this.$refs.affix.setDynamicVariables();
-                if (this.$refs.affix.scrollAffix) {
-                    this.$refs.affix.initScrollAffix();
-                }
-            }
-        }
-    },
-    created: function created() {
-        this.detectWindowSize();
-        this.show_code = this.$root.show_code;
-
-        this.$root.$on('view-code', function (value) {
-            console.log('view-code', value);
-            this.show_code = value;
-        }.bind(this));
-
-        window.addEventListener('resize', this.detectWindowSize);
-    }
-});
-
-/***/ }),
-/* 193 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony default export */ __webpack_exports__["a"] = ({
-  html: "<datatable :columns=\"columns\" :data=\"rows\"></datatable>",
-  css: "new Vue({\n  el: \"#vue-element\",\n  data: {\n    table_columns: [\n      {label: 'id', field: 'id'},\n      {label: 'Username', field: 'user.username'},\n      {label: 'First Name', field: 'user.first_name'},\n      {label: 'Last Name', field: 'user.last_name'},\n      {label: 'Email', field: 'user.email'},\n      {label: 'address', representedAs: function(row){\n        return row.address + '<br />' + row.city + ', ' + row.state;\n      }, interpolate: true}\n    ],\n    table_rows: [\n      //...\n      {\n        \"id\": 1,\n        \"user\": {\n          \"username\": \"dprice0\",\n          \"first_name\": \"Daniel\",\n          \"last_name\": \"Price\",\n          \"email\": \"dprice0@blogs.com\"\n        },\n        \"address\": \"3 Toban Park\",\n        \"city\": \"Pocatello\",\n        \"state\": \"Idaho\"\n        }\n      //...\n    ]\n  }\n});"
-});
-
-/***/ }),
-/* 194 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "code" },
-    [
-      _c(
-        "affix",
-        {
-          ref: "affix",
-          attrs: {
-            "relative-element-selector": _vm.element,
-            enabled: !_vm.small_window_size,
-            offset: { top: 60, bottom: 0 }
-          }
-        },
-        [
-          _vm.show_code == "html"
-            ? _c(
-                "pre",
-                {
-                  directives: [
-                    {
-                      name: "highlightjs",
-                      rawName: "v-highlightjs",
-                      value: _vm.comp,
-                      expression: "comp"
-                    }
-                  ]
-                },
-                [_c("code", { staticClass: "xml" })]
-              )
-            : _vm._e(),
-          _vm._v(" "),
-          _vm.show_code == "javascript"
-            ? _c(
-                "pre",
-                {
-                  directives: [
-                    {
-                      name: "highlightjs",
-                      rawName: "v-highlightjs",
-                      value: _vm.comp2,
-                      expression: "comp2"
-                    }
-                  ]
-                },
-                [_c("code", { staticClass: "javascript" })]
-              )
-            : _vm._e()
-        ]
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-874aca36", module.exports)
-  }
-}
-
-/***/ }),
-/* 195 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 196 */,
-/* 197 */,
-/* 198 */,
-/* 199 */,
-/* 200 */
-/***/ (function(module, exports, __webpack_require__) {
-
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(true)
 		module.exports = factory();
@@ -33118,6 +32746,440 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 /***/ })
 /******/ ]);
 });
+
+/***/ }),
+/* 189 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(190)
+/* template */
+var __vue_template__ = __webpack_require__(191)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "assets/pages/quick-start.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-45efdf39", Component.options)
+  } else {
+    hotAPI.reload("data-v-45efdf39", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 190 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {};
+    }
+});
+
+/***/ }),
+/* 191 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "content" }, [
+    _c("h2", { staticClass: "pb-4" }, [_vm._v("Quick Start")]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "example", attrs: { id: "test-1" } },
+      [
+        _c("p", [
+          _vm._v(
+            "\n            Use the component in your HTML or template. Pass in the columns and the data to your Vue instance.\n        "
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis repellendus, omnis quidem ad dolorem aliquid. Fugit dolorem dolor ea odit omnis deleniti rerum vel, deserunt et, eius labore placeat rem.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi quis in voluptatem optio labore exercitationem ab porro unde dolorum, distinctio itaque doloribus quas maxime? Dolor, assumenda veritatis reiciendis fuga perspiciatis!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse hic neque nesciunt incidunt nemo fugit dolorum inventore nam illo tempora voluptate architecto, aspernatur ducimus, iusto doloribus quos doloremque. Beatae, deserunt."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis repellendus, omnis quidem ad dolorem aliquid. Fugit dolorem dolor ea odit omnis deleniti rerum vel, deserunt et, eius labore placeat rem.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi quis in voluptatem optio labore exercitationem ab porro unde dolorum, distinctio itaque doloribus quas maxime? Dolor, assumenda veritatis reiciendis fuga perspiciatis!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse hic neque nesciunt incidunt nemo fugit dolorum inventore nam illo tempora voluptate architecto, aspernatur ducimus, iusto doloribus quos doloremque. Beatae, deserunt."
+          )
+        ]),
+        _vm._v(" "),
+        _c("code-example", { attrs: { element: "#test-1" } })
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "example", attrs: { id: "test-2" } },
+      [
+        _c("p", [
+          _vm._v(
+            "\n            Use the component in your HTML or template. Pass in the columns and the data to your Vue instance.\n        "
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis repellendus, omnis quidem ad dolorem aliquid. Fugit dolorem dolor ea odit omnis deleniti rerum vel, deserunt et, eius labore placeat rem.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi quis in voluptatem optio labore exercitationem ab porro unde dolorum, distinctio itaque doloribus quas maxime? Dolor, assumenda veritatis reiciendis fuga perspiciatis!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse hic neque nesciunt incidunt nemo fugit dolorum inventore nam illo tempora voluptate architecto, aspernatur ducimus, iusto doloribus quos doloremque. Beatae, deserunt."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis repellendus, omnis quidem ad dolorem aliquid. Fugit dolorem dolor ea odit omnis deleniti rerum vel, deserunt et, eius labore placeat rem.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi quis in voluptatem optio labore exercitationem ab porro unde dolorum, distinctio itaque doloribus quas maxime? Dolor, assumenda veritatis reiciendis fuga perspiciatis!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse hic neque nesciunt incidunt nemo fugit dolorum inventore nam illo tempora voluptate architecto, aspernatur ducimus, iusto doloribus quos doloremque. Beatae, deserunt."
+          )
+        ]),
+        _vm._v(" "),
+        _c("code-example", { attrs: { element: "#test-2" } })
+      ],
+      1
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-45efdf39", module.exports)
+  }
+}
+
+/***/ }),
+/* 192 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(193)
+/* template */
+var __vue_template__ = __webpack_require__(195)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "assets/components/code-example.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-874aca36", Component.options)
+  } else {
+    hotAPI.reload("data-v-874aca36", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 193 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pages_examples_quick_start_part1_js__ = __webpack_require__(194);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: {
+        element: String
+    },
+    data: function data() {
+        return {
+            comp: __WEBPACK_IMPORTED_MODULE_0__pages_examples_quick_start_part1_js__["a" /* default */].html,
+            comp2: __WEBPACK_IMPORTED_MODULE_0__pages_examples_quick_start_part1_js__["a" /* default */].css,
+            small_window_size: false,
+            show_code: 'html',
+            affix_width: 0
+        };
+    },
+    computed: {
+        offset: function offset() {
+            if (this.small_window_size) {
+                return { top: 0, bottom: 0 };
+            }
+
+            return { top: 59, bottom: 59 };
+        }
+    },
+    methods: {
+        detectWindowSize: function detectWindowSize() {
+            this.small_window_size = window.innerWidth < 992 || typeof window.orientation !== "undefined" || navigator.userAgent.indexOf('IEMobile') !== -1;
+
+            this.resetAffix(true);
+            this.setAffixWidth();
+        },
+        resetAffix: function resetAffix(ignore_styles) {
+            ignore_styles = typeof ignore_styles == 'boolean' && ignore_styles;
+
+            if (!ignore_styles && this.$el) {
+                var affix = this.$el.querySelector('.affix');
+                affix.classList = [];
+                affix.removeAttribute("style");
+            }
+
+            if (this.$refs.affix) {
+                this.$refs.affix.$el.classList.add('vue-affix');
+                this.$refs.affix.affixInitialTop = this.$refs.affix.getOffsetTop(this.$refs.affix.$el);
+                this.$refs.affix.topPadding = this.$refs.affix.affixInitialTop - this.$refs.affix.getOffsetTop(this.$refs.affix.relativeElement);
+                this.$refs.affix.setDynamicVariables();
+
+                if (this.$refs.affix.scrollAffix) {
+                    this.$refs.affix.initScrollAffix();
+                }
+            }
+        },
+        setAffixWidth: function setAffixWidth() {
+            this.affix_width = this.$el.offsetWidth;
+        }
+    },
+    mounted: function mounted() {
+        this.detectWindowSize();
+
+        window.addEventListener('resize', this.detectWindowSize);
+    }
+});
+
+/***/ }),
+/* 194 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({
+  html: "<datatable :columns=\"columns\" :data=\"rows\"></datatable>",
+  css: "new Vue({\n  el: \"#vue-element\",\n  data: {\n    table_columns: [\n      {label: 'id', field: 'id'},\n      {label: 'Username', field: 'user.username'},\n      {label: 'First Name', field: 'user.first_name'},\n      {label: 'Last Name', field: 'user.last_name'},\n      {label: 'Email', field: 'user.email'},\n      {label: 'address', representedAs: function(row){\n        return row.address + '<br />' + row.city + ', ' + row.state;\n      }, interpolate: true}\n    ],\n    table_rows: [\n      //...\n      {\n        \"id\": 1,\n        \"user\": {\n          \"username\": \"dprice0\",\n          \"first_name\": \"Daniel\",\n          \"last_name\": \"Price\",\n          \"email\": \"dprice0@blogs.com\"\n        },\n        \"address\": \"3 Toban Park\",\n        \"city\": \"Pocatello\",\n        \"state\": \"Idaho\"\n        }\n      //...\n    ]\n  }\n});"
+});
+
+/***/ }),
+/* 195 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "code" },
+    [
+      _c(
+        "affix",
+        {
+          ref: "affix",
+          style: { width: _vm.affix_width + "px" },
+          attrs: {
+            "relative-element-selector": _vm.element,
+            enabled: !_vm.small_window_size,
+            offset: _vm.offset
+          }
+        },
+        [
+          _c("div", { staticClass: "bg-black text-grey-light p-4 mb-4" }, [
+            _c("div", { staticClass: "select-box" }, [
+              _c(
+                "select",
+                {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.show_code,
+                      expression: "show_code"
+                    }
+                  ],
+                  on: {
+                    change: [
+                      function($event) {
+                        var $$selectedVal = Array.prototype.filter
+                          .call($event.target.options, function(o) {
+                            return o.selected
+                          })
+                          .map(function(o) {
+                            var val = "_value" in o ? o._value : o.value
+                            return val
+                          })
+                        _vm.show_code = $event.target.multiple
+                          ? $$selectedVal
+                          : $$selectedVal[0]
+                      },
+                      _vm.resetAffix
+                    ]
+                  }
+                },
+                [
+                  _c("option", { attrs: { value: "html" } }, [_vm._v("HTML")]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "javascript" } }, [
+                    _vm._v("Javascript")
+                  ])
+                ]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _vm.show_code == "html"
+            ? _c(
+                "pre",
+                {
+                  directives: [
+                    {
+                      name: "highlightjs",
+                      rawName: "v-highlightjs",
+                      value: _vm.comp,
+                      expression: "comp"
+                    }
+                  ]
+                },
+                [_c("code", { staticClass: "xml" })]
+              )
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.show_code == "javascript"
+            ? _c(
+                "pre",
+                {
+                  directives: [
+                    {
+                      name: "highlightjs",
+                      rawName: "v-highlightjs",
+                      value: _vm.comp2,
+                      expression: "comp2"
+                    }
+                  ]
+                },
+                [_c("code", { staticClass: "javascript" })]
+              )
+            : _vm._e()
+        ]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-874aca36", module.exports)
+  }
+}
+
+/***/ }),
+/* 196 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
