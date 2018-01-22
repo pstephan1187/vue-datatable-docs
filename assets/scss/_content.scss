@@ -51,7 +51,7 @@
     }
 
     .documentation {
-        @apply w-5/6 flex bg-blue-lightest;
+        @apply w-5/6 flex bg-blue-lightest pr-0;
 
         .content {
             @apply w-1/2 pr-4;
