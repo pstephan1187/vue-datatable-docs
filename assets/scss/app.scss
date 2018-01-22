@@ -75,6 +75,17 @@ a {
     text-decoration: none;
 }
 
+button, .select-box, select {
+    cursor: pointer;
+}
+
+.p-link {
+    padding-top: .35rem;
+    padding-bottom: .15rem;
+    padding-left: .4rem;
+    padding-right: .25rem;
+}
+
 .documentation {
     .hljs {
         @apply bg-transparent;

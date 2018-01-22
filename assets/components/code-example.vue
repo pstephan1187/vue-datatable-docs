@@ -1,7 +1,7 @@
 <template>
     <div class="code">
         <affix ref="affix" :relative-element-selector="element" :style="{width: affix_width + 'px'}" :enabled="!small_window_size" :offset="offset">
-            <div class="bg-black text-grey-light p-4 mb-4">
+            <div class="flex justify-between items-center bg-black text-grey-light p-4 mb-4">
                 <div class="select-box">
                     <select v-model="show_code" @change="resetAffix">
                         <option
@@ -10,6 +10,11 @@
                             :value="example.type"
                         >{{ example.label }}</option>
                     </select>
+                </div>
+                <div>
+                    <a :href="demoUrl" target="_blank" class="bg-grey-dark text-black rounded border-2 border-grey-light p-link hover:bg-grey-darker">
+                        <i class="fa fa-external-link"></i>
+                    </a>
                 </div>
             </div>
 
