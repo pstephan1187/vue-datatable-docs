@@ -86,6 +86,10 @@ button, .select-box, select {
     padding-right: .25rem;
 }
 
+code {
+    @apply bg-grey-darker text-grey-lightest px-1;
+}
+
 .documentation {
     .hljs {
         @apply bg-transparent;
