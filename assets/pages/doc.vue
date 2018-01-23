@@ -5,9 +5,14 @@
         <div :id="section.id" v-for="section in sections" :key="section.id" class="example">
             <div v-html="section.content"></div>
 
-            <iframe :src="section.demo.url" :style="{width: '100%', height: section.demo.height}"></iframe>
+            <iframe
+                v-if="'demo' in section"
+                :src="section.demo.url"
+                :style="{width: '100%', height: section.demo.height}"
+            ></iframe>
 
             <code-example
+                v-if="'demo' in section"
                 :element="'#' + section.id"
                 :demo-url="section.demo.url"
                 :examples="section.examples"
