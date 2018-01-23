@@ -92,6 +92,18 @@ button, .select-box, select {
     }
 }
 
+.alert {
+    @apply bg-grey-lighter text-grey-darker border-grey-dark rounded border-2 p-4;
+
+    p {
+        @apply mb-0;
+    }
+
+    &.alert-warning {
+        @apply bg-orange-lighter text-orange-darker border-orange-dark;
+    }
+}
+
 .vue-affix {
     width: 100%;
     // top: 0 !important;
