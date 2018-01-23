@@ -18,6 +18,11 @@ const Installation = { template: '<div>bar</div>' };
 
 const routes = [
     {
+        path: '/',
+        component: Doc,
+        props: require('../pages/examples/home.js')
+    },
+    {
         path: '/quick-start',
         component: Doc,
         props: require('../pages/examples/quick-start.js')
