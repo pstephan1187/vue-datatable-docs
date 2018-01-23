@@ -44,6 +44,10 @@
             &:hover {
                 @apply bg-blue text-blue-lightest;
             }
+
+            &.router-link-exact-active {
+                @apply bg-blue text-blue-lightest;
+            }
         }
 
         ul {
