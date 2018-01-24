@@ -6,23 +6,23 @@
                     <select v-model="show_code" @change="resetAffix">
                         <option
                             v-for="example in examples"
-                            :key="example.type"
-                            :value="example.type"
+                            :key="example.id"
+                            :value="example.id"
                         >{{ example.label }}</option>
                     </select>
                 </div>
-                <div>
-                    <a :href="demoUrl" target="_blank" class="bg-grey-dark text-black rounded border-2 border-grey-light p-link hover:bg-grey-darker">
+                <!-- <div v-if="'url' in example">
+                    <a :href="example.url" target="_blank" class="bg-grey-dark text-black rounded border-2 border-grey-light p-link hover:bg-grey-darker">
                         <i class="fa fa-external-link"></i>
                     </a>
-                </div>
+                </div> -->
             </div>
 
 
             <pre
                 v-for="example in examples"
-                :key="example.type"
-                v-if="show_code == example.type"
+                :key="example.id"
+                v-if="show_code == example.id"
                 v-highlightjs="example.content"
             ><code :class="example.type"></code></pre>
         </affix>
@@ -30,19 +30,19 @@
 </template>
 
 <script>
-const stripIndent = require('strip-indent');
+// const stripIndent = require('strip-indent');
 
 export default {
     props: {
         element: String,
-        demoUrl: String,
-        // examples: Array,
+        // demoUrl: String,
+        examples: Array,
     },
     data: () => ({
         small_window_size: false,
         show_code: null,
         affix_width: 0,
-        examples: [],
+        // examples: [],
     }),
     computed: {
         offset(){
@@ -89,24 +89,24 @@ export default {
     },
     created(){
         // Get the code examples from the demo page
-        axios.get(this.demoUrl).then(function(response){
-            let parser = new DOMParser();
-            let doc = parser.parseFromString(response.data, "text/html");
+        // axios.get(this.demoUrl).then(function(response){
+        //     let parser = new DOMParser();
+        //     let doc = parser.parseFromString(response.data, "text/html");
 
-            let examples = doc.querySelectorAll('[data-example]');
+        //     let examples = doc.querySelectorAll('[data-example]');
 
-            for(let example of examples){
-                let parsed_example = JSON.parse(example.dataset.example);
+        //     for(let example of examples){
+        //         let parsed_example = JSON.parse(example.dataset.example);
 
-                this.examples.push({
-                    type: parsed_example.type,
-                    label: parsed_example.label,
-                    content: stripIndent(example.innerHTML),
-                });
-            }
+        //         this.examples.push({
+        //             type: parsed_example.type,
+        //             label: parsed_example.label,
+        //             content: stripIndent(example.innerHTML),
+        //         });
+        //     }
 
-            this.show_code = this.examples[0].type;
-        }.bind(this));
+        //     this.show_code = this.examples[0].type;
+        // }.bind(this));
     },
     mounted(){
         this.detectWindowSize();

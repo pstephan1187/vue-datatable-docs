@@ -67,7 +67,7 @@
                 </ul>
             </div>
             <div class="documentation">
-                <router-view></router-view>
+                <router-view :key="$route.fullPath"></router-view>
                 <div class="code-bg">
                     <!-- <affix relative-element-selector=".code-bg" :offset="{top: 0, bottom: 0}">
                         <div class="w-full bg-black text-grey-light p-4 self-start flex justify-between">
