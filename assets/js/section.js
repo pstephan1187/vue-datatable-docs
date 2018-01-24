@@ -34,6 +34,8 @@ class Section
                     example.url = null;
                 }
 
+                example.content = stripIndent(example.content);
+
                 this.examples.push(example);
             }
         }
