@@ -1,6 +1,6 @@
 <template>
     <div class="content">
-        <h2 class="pb-4">{{ title }}</h2>
+        <h2 v-if="title" class="pb-4">{{ title }}</h2>
 
         <div
             v-for="section in parsed_sections"

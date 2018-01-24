@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Home',
+  title: null,
   sections: [
     {
       id: 'home',
