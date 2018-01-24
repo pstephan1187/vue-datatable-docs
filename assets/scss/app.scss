@@ -94,6 +94,10 @@ code {
     .hljs {
         @apply bg-transparent;
     }
+
+    h3 {
+        @apply pb-4;
+    }
 }
 
 .alert {
