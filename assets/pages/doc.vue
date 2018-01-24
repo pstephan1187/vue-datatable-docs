@@ -17,7 +17,7 @@
             ></iframe>
 
             <code-example
-                v-if="'examples' in section"
+                v-if="section.examples.length > 0"
                 :element="'#' + section.id"
                 :examples="section.examples"
             ></code-example>
@@ -26,7 +26,7 @@
 </template>
 
 <script>
-const stripIndent = require('strip-indent');
+import Section from "../js/section.js";
 
 export default {
     props: {
@@ -36,63 +36,10 @@ export default {
     data: () => ({
         parsed_sections: []
     }),
-
-    methods: {
-        parseSections(){
-            for(var section of this.sections){
-                this.parseSection(section);
-            }
-        },
-        parseSection(section){
-            if('demo' in section){
-                this.parseSectionDemo(section);
-
-                return;
-            }
-
-            for(var i in section.examples){
-                var example = section.examples[i];
-
-                if(!'id' in example){
-                    example.id = example.type;
-                }
-            }
-
-            this.parsed_sections.push(section);
-        },
-        parseSectionDemo(section){
-            section.examples = [];
-
-            axios.get(section.demo.url).then(function(response){
-                let parser = new DOMParser();
-                let doc = parser.parseFromString(response.data, "text/html");
-
-                let examples = doc.querySelectorAll('[data-example]');
-
-                for(let example of examples){
-                    let parsed_example = JSON.parse(example.dataset.example);
-
-                    var section_example = {
-                        type: parsed_example.type,
-                        label: parsed_example.label,
-                        content: stripIndent(example.innerHTML),
-                    }
-
-                    if('id' in parsed_example){
-                        section_example.id = parsed_example.id;
-                    }else{
-                        section_example.id = parsed_example.type;
-                    }
-
-                    section.examples.push(section_example);
-                }
-
-                this.parsed_sections.push(section);
-            }.bind(this));
-        }
-    },
     created(){
-        this.parseSections();
+        this.parsed_sections = this.sections.map(function(section){
+            return new Section(section);
+        }.bind(this));
     }
 }
 </script>

@@ -27,7 +27,11 @@ const routes = [
         component: Doc,
         props: require('../pages/examples/quick-start.js')
     },
-    { path: '/installation', component: Installation }
+    {
+        path: '/installation',
+        component: Doc,
+        props: require('../pages/examples/installation.js')
+    }
 ];
 
 const router = new VueRouter({

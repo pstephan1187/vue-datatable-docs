@@ -11,11 +11,11 @@
                         >{{ example.label }}</option>
                     </select>
                 </div>
-                <!-- <div v-if="'url' in example">
+                <div v-if="example && example.url">
                     <a :href="example.url" target="_blank" class="bg-grey-dark text-black rounded border-2 border-grey-light p-link hover:bg-grey-darker">
                         <i class="fa fa-external-link"></i>
                     </a>
-                </div> -->
+                </div>
             </div>
 
 
@@ -35,16 +35,25 @@
 export default {
     props: {
         element: String,
-        // demoUrl: String,
         examples: Array,
     },
     data: () => ({
         small_window_size: false,
         show_code: null,
         affix_width: 0,
-        // examples: [],
     }),
     computed: {
+        example(){
+            let filtered_examples =  this.examples.filter(function(example){
+                return example.id == this.show_code;
+            }.bind(this));
+
+            if(filtered_examples.length > 0){
+                return filtered_examples[0];
+            }
+
+            return null;
+        },
         offset(){
             if(this.small_window_size){
                 return {top: 0, bottom: 0};
@@ -88,25 +97,9 @@ export default {
         }
     },
     created(){
-        // Get the code examples from the demo page
-        // axios.get(this.demoUrl).then(function(response){
-        //     let parser = new DOMParser();
-        //     let doc = parser.parseFromString(response.data, "text/html");
-
-        //     let examples = doc.querySelectorAll('[data-example]');
-
-        //     for(let example of examples){
-        //         let parsed_example = JSON.parse(example.dataset.example);
-
-        //         this.examples.push({
-        //             type: parsed_example.type,
-        //             label: parsed_example.label,
-        //             content: stripIndent(example.innerHTML),
-        //         });
-        //     }
-
-        //     this.show_code = this.examples[0].type;
-        // }.bind(this));
+        if(this.examples.length > 0){
+            this.show_code = this.examples[0].id;
+        }
     },
     mounted(){
         this.detectWindowSize();
@@ -115,4 +108,3 @@ export default {
     }
 }
 </script>
-
