@@ -58,7 +58,7 @@
         }
 
         .example {
-            @apply relative -mr-4 pr-4;
+            @apply relative -mr-4 -mt-4 pr-4 pt-4;
 
             .code {
                 // @apply text-grey-light absolute -mx-0 -mb-4 py-0 w-full px-4 pb-8;
@@ -68,8 +68,9 @@
                        m-0
                        py-0;
                 right: -100%;
-                top: -59px;
-                bottom: 59px;
+                top: 0;
+                // top: -59px;
+                // bottom: 59px;
             }
         }
 

@@ -1,7 +1,7 @@
 <template>
     <div class="code">
-        <affix ref="affix" :relative-element-selector="element" :style="{width: affix_width + 'px'}" :enabled="!small_window_size" :offset="offset">
-            <div class="flex justify-between items-center bg-black text-grey-light p-4 mb-4">
+        <affix ref="affix" :relative-element-selector="element" :style="{width: affix_width + 'px'}" :enabled="!small_window_size" :offset="{top: 0, bottom: 0}">
+            <div class="flex justify-between items-center bg-black text-grey-light p-4">
                 <div class="select-box">
                     <select v-model="show_code" @change="resetAffix">
                         <option
@@ -53,24 +53,14 @@ export default {
             }
 
             return null;
-        },
-        offset(){
-            if(this.small_window_size){
-                return {top: 0, bottom: 0};
-            }
-
-            return {top: 59, bottom: 59};
         }
     },
     methods: {
-        detectWindowSize(){
+        handleWindowSize(){
             this.small_window_size =
                 (window.innerWidth < 992) ||
                 (typeof window.orientation !== "undefined") ||
                 (navigator.userAgent.indexOf('IEMobile') !== -1);
-
-            this.resetAffix(true);
-            this.setAffixWidth();
         },
         resetAffix(ignore_styles){
             ignore_styles = typeof ignore_styles == 'boolean' && ignore_styles;
@@ -102,9 +92,14 @@ export default {
         }
     },
     mounted(){
-        this.detectWindowSize();
+        this.handleWindowSize();
+        this.setAffixWidth();
 
-        window.addEventListener('resize', this.detectWindowSize);
+        window.addEventListener('resize', function(){
+            this.handleWindowSize();
+            this.setAffixWidth();
+            this.resetAffix(true);
+        }.bind(this));
     }
 }
 </script>

@@ -11,7 +11,7 @@
             <div v-html="section.content"></div>
 
             <iframe
-                v-if="'demo' in section"
+                v-if="section.demo.url"
                 :src="section.demo.url"
                 :style="{width: '100%', height: section.demo.height}"
             ></iframe>
