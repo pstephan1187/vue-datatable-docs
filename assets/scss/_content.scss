@@ -44,7 +44,16 @@
 }
 
 @screen lg {
+html, body, #app {
+    height: 100%;
+}
+
+#app {
+    @apply flex flex-col;
+}
+
 .content-container {
+    @apply flex-grow;
 
     .sidebar {
         @apply w-1/6;
