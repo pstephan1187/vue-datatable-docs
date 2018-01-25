@@ -56,7 +56,7 @@ class Section
                     type: example_json.type,
                     label: example_json.label,
                     url: this.demo.url,
-                    content: stripIndent(example.innerHTML),
+                    content: stripIndent(example.innerHTML).replace(/^[\n\r]/, ''),
                 }
 
                 if ('id' in example_json) {
