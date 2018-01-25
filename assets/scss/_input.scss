@@ -1,14 +1,18 @@
 .select-box {
-    @apply .bg-grey-dark .border-2 .border-grey .rounded;
-    position: relative;
+    // @apply .bg-grey-dark .border-2 .border-grey .rounded;
+    @apply relative bg-pitch-black rounded;
 
     select {
-        @apply .relative .appearance-none .bg-transparent .p-1 pr-6;
+        @apply relative appearance-none bg-transparent text-grey font-light p-1 pr-6;
         z-index: 2;
+
+        option {
+            color: #000000;
+        }
     }
 
     &:after {
-        content: "\f078";
+        content: "\f0d7";
         font-family: FontAwesome;
         font-style: normal;
         font-weight: normal;
@@ -17,7 +21,7 @@
         top: 0.25rem;
         right: 0.25rem;
         z-index: 1;
-        @apply .text-grey-darkest;
+        @apply text-grey font-light;
     }
 }
 
