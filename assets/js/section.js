@@ -34,7 +34,7 @@ class Section
                     example.url = null;
                 }
 
-                example.content = stripIndent(example.content);
+                example.content = stripIndent(example.content).replace(/^[\n\r]/, '');
 
                 this.examples.push(example);
             }
