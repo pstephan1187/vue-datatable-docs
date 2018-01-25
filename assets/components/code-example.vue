@@ -11,11 +11,10 @@
                         >{{ example.label }}</option>
                     </select>
                 </div>
-                <div v-if="example && example.url">
-                    <a :href="example.url" target="_blank" class="bg-grey-dark text-black rounded border-2 border-grey-light p-link hover:bg-grey-darker">
-                        <i class="fa fa-external-link"></i>
-                    </a>
-                </div>
+
+                <a v-if="example && example.url" :href="example.url" target="_blank" class="bg-pitch-black text-grey rounded p-link hover:text-grey-lighter">
+                    <i class="fa fa-external-link"></i>
+                </a>
             </div>
 
 
