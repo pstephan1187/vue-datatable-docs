@@ -5,6 +5,7 @@ class Section
     constructor(section)
     {
         this.id = section.id;
+        this.title = section.title;
         this.content = section.content;
         this.examples = [];
         this.demo = {

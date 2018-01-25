@@ -1,8 +1,8 @@
 module.exports = {
-  title: 'Quick Start',
   sections: [
     {
       id: 'quick-start',
+      title: 'Quick Start',
       content: `
         <p>You will need to have Vue registered globally (by using the standard ES5 script tag for Vue or by assigning Vue to <code>window.Vue</code>) and have the datatable component registered (See <a href="/installation">Installation</a>).</p>
 

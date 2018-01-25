@@ -1,13 +1,13 @@
 <template>
     <div class="content">
-        <h2 v-if="title" class="pb-4">{{ title }}</h2>
-
         <div
             v-for="section in parsed_sections"
             :id="section.id"
             :key="section.id"
             class="example"
         >
+            <h2 v-if="section.title" class="pb-4">{{ section.title }}</h2>
+
             <div v-html="section.content"></div>
 
             <iframe

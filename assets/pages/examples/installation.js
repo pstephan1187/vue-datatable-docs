@@ -1,8 +1,8 @@
 module.exports = {
-  title: 'Installation',
   sections: [
     {
       id: 'es5',
+      title: 'Installation',
       content: `
         <h3>ES5</h3>
 
@@ -12,7 +12,7 @@ module.exports = {
         {
           id: 'html',
           type: 'html',
-          label: 'Html',
+          label: 'HTML',
           content: `
             <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.js"></script>
             <script src="/dist/vuejs-datatable.js"></script>
@@ -21,7 +21,7 @@ module.exports = {
       ]
     },
     {
-      id: 'es5',
+      id: 'es6',
       content: `
         <h3>ES6</h3>
 
