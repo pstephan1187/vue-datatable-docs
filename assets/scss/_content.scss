@@ -59,6 +59,7 @@
 
         .example {
             @apply relative -mr-4 -mt-4 pr-4 pt-4;
+            min-height: 200px;
 
             .code {
                 // @apply text-grey-light absolute -mx-0 -mb-4 py-0 w-full px-4 pb-8;
