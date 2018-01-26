@@ -109,6 +109,10 @@ code {
 
     &.alert-warning {
         @apply bg-orange-lighter text-orange-darker border-orange-dark;
+
+        code {
+            @apply bg-orange-darker text-orange-lightest;
+        }
     }
 }
 
