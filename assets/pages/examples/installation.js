@@ -7,6 +7,10 @@ module.exports = {
         <h3>ES5</h3>
 
         <p>You can install Vue.js Datatable via a standard script tag.</p>
+
+        <div class="alert alert-warning">
+          Make sure to update the path to the datatable script to match where you put it.
+        </div>
       `,
       examples: [
         {
