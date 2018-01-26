@@ -38,6 +38,10 @@
     @apply list-reset -mx-4;
 
     li {
+        span {
+            @apply p-4 block;
+        }
+
         a {
             @apply p-4 block;
 

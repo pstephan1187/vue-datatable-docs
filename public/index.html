@@ -43,7 +43,7 @@
                     <li><router-link to="/quick-start">Quick Start</router-link></li>
                     <li><router-link to="/installation">Installation</router-link></li>
                     <li>
-                        <a href="#">Usage</a>
+                        <span>Usage</span>
 
                         <ul>
                             <li><a href="#">Minimum Usage</a></li>
@@ -68,20 +68,7 @@
             </div>
             <div class="documentation">
                 <router-view :key="$route.fullPath"></router-view>
-                <div class="code-bg">
-                    <!-- <affix relative-element-selector=".code-bg" :offset="{top: 0, bottom: 0}">
-                        <div class="w-full bg-black text-grey-light p-4 self-start flex justify-between">
-                            <h3 class="self-center">Example Code</h3>
-
-                            <div class="select-box">
-                                <select v-model="show_code" @change="updateCodeView">
-                                    <option value="html">HTML</option>
-                                    <option value="javascript">Javascript</option>
-                                </select>
-                            </div>
-                        </div>
-                    </affix> -->
-                </div>
+                <div class="code-bg"></div>
             </div>
         </div>
 
