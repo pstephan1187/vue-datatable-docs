@@ -36,7 +36,12 @@ const routes = [
         path: '/usage/minimum',
         component: Doc,
         props: require('../pages/examples/usage/minimum.js')
-    }
+    },
+    {
+        path: '/usage/basic',
+        component: Doc,
+        props: require('../pages/examples/usage/basic.js')
+    },
 ];
 
 const router = new VueRouter({
