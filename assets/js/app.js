@@ -31,6 +31,11 @@ const routes = [
         path: '/installation',
         component: Doc,
         props: require('../pages/examples/installation.js')
+    },
+    {
+        path: '/usage/minimum',
+        component: Doc,
+        props: require('../pages/examples/usage/minimum.js')
     }
 ];
 
