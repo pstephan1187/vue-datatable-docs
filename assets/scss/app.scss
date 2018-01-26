@@ -101,7 +101,7 @@ code {
 }
 
 .alert {
-    @apply bg-grey-lighter text-grey-darker border-grey-dark rounded border-2 p-4;
+    @apply bg-grey-lighter text-grey-darker border-grey-dark rounded border-2 p-4 mb-4;
 
     p {
         @apply mb-0;
