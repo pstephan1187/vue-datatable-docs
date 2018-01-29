@@ -116,6 +116,10 @@ code {
     }
 }
 
+ul {
+    @apply mb-4;
+}
+
 .vue-affix {
     width: 100%;
     // top: 0 !important;
