@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Vue.Js Datatable</title>
+
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .table-responsive {
+            padding-right: 0;
+            padding-left: 0;
+            border-width: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="table" class="container" data-example='{"type": "html", "label": "HTML"}'>
+
+        <div class="row">
+            <div id="table" class="col-xs-12 table-responsive">
+                <datatable :columns="columns" :data="getDataDebounced"></datatable>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 form-inline">
+                <datatable-pager v-model="page" type="abbreviated" :per-page="per_page"></datatable-pager>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.1/axios.min.js"></script>
+    <script src="./../rows.js"></script>
+    <script src="/js/vuejs-datatable.js"></script>
+    <script data-example='{"type": "javascript", "label": "Javascript"}'>
+        Vue.component('rowImg', {
+            template: '<img :src="row.links.mission_patch" style="width: 20px;" />',
+            props: ['row', 'column']
+        });
+
+        new Vue({
+            el: '#table',
+            data: {
+                columns: [
+                    { label: '', component: 'row-img', sortable: false},
+                    { label: '#', field: 'flight_number', sortable: false},
+                    { label: 'Year', field: 'launch_year', sortable: false},
+                    { label: 'Rocket Name', field: 'rocket.rocket_name', sortable: false},
+                    { label: 'Rocket Type', field: 'rocket.rocket_type', sortable: false},
+                    { label: 'Launch Site', field: 'launch_site.site_name', sortable: false},
+                    { label: 'Success', representedAs: function(row){
+                        return row.launch_success ? 'Yes' : 'No';
+                    }, sortable: false},
+                ],
+                rows: window.rows,
+                page: 1,
+                per_page: 10,
+                getDataDebounced: null,
+            },
+            methods: {
+                getData: function(params, setRowData){
+                    // filter: ""
+                    // sort_by: null
+                    // sort_dir: null
+                    axios.get('https://api.spacexdata.com/v2/launches').then(function(response){
+                        var start_index = (params.page_number - 1) * params.page_length;
+                        var end_index = start_index + params.page_length;
+
+                        setRowData(
+                            response.data.slice(start_index, end_index),
+                            response.data.length
+                        );
+                    }.bind(this));
+                    console.log(params.filter);
+                }
+            },
+            created: function(){
+                this.getDataDebounced = _.debounce(this.getData, 300);
+            }
+        });
+    </script>
+</body>
+
+</html>

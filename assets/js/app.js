@@ -42,6 +42,11 @@ const routes = [
         component: Doc,
         props: require('../pages/examples/usage/basic.js')
     },
+    {
+        path: '/usage/ajax',
+        component: Doc,
+        props: require('../pages/examples/usage/ajax.js')
+    },
 ];
 
 const router = new VueRouter({
