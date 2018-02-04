@@ -47,6 +47,11 @@ const routes = [
         component: Doc,
         props: require('../pages/examples/usage/ajax.js')
     },
+    {
+        path: '/usage/custom-templates',
+        component: Doc,
+        props: require('../pages/examples/usage/custom-templates.js')
+    },
 ];
 
 const router = new VueRouter({

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Vue.Js Datatable</title>
+
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .table-responsive {
+            padding-right: 0;
+            padding-left: 0;
+            border-width: 0;
+        }
+
+        .avatar {
+            border-radius: 50%;
+            float: left;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="table" class="container" data-example='{"type": "html", "label": "HTML"}'>
+        <div class="row">
+            <div id="table" class="col-xs-12 table-responsive">
+                <datatable :columns="columns" :data="rows">
+                    <template scope="{ row }">
+                        <tr>
+                            <td>
+                                <button class="btn btn-xs btn-primary" @click="expand(row.id)">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </td>
+                            <td>{{ row.id }}</td>
+                            <td>{{ row.user.username }}</td>
+                            <td>{{ row.user.first_name }}</td>
+                            <td>{{ row.user.last_name }}</td>
+                            <td>{{ row.user.email }}</td>
+                        </tr>
+                        <tr v-if="expanded == row.id">
+                            <td colspan="6">
+                                <p>
+                                    <img
+                                        :src="'http://i.pravatar.cc/50?u=' + row.user.email"
+                                        :alt="row.user.username"
+                                        class="avatar"
+                                    >
+                                    {{ row.address }}<br>
+                                    {{ row.city }}, {{ row.state }}
+                                </p>
+                            </td>
+                        </tr>
+                    </template>
+                </datatable>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 form-inline">
+                <datatable-pager v-model="page" type="abbreviated" :per-page="per_page"></datatable-pager>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.js"></script>
+    <script src="./../rows.js"></script>
+    <script src="/js/vuejs-datatable.js"></script>
+    <script data-example='{"type": "javascript", "label": "Javascript"}'>
+        new Vue({
+            el: '#table',
+            data: {
+                columns: [
+                    { label: '', field: '', sortable: false },
+                    { label: 'ID', field: 'id', align: 'center' },
+                    { label: 'Username', field: 'user.username' },
+                    { label: 'First Name', field: 'user.first_name' },
+                    { label: 'Last Name', field: 'user.last_name' },
+                    { label: 'Email', field: 'user.email', sortable: false },
+                ],
+                rows: window.rows,
+                page: 1,
+                per_page: 10,
+                expanded: null
+            },
+            methods: {
+                expand: function(id){
+                    if (this.expanded == id){
+                        this.expanded = null;
+
+                        return;
+                    }
+
+                    this.expanded = id;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
