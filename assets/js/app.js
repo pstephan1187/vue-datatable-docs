@@ -52,6 +52,11 @@ const routes = [
         component: Doc,
         props: require('../pages/examples/usage/custom-templates.js')
     },
+    {
+        path: '/usage/multiple-tables',
+        component: Doc,
+        props: require('../pages/examples/usage/multiple-tables.js')
+    },
 ];
 
 const router = new VueRouter({
