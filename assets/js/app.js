@@ -57,6 +57,11 @@ const routes = [
         component: Doc,
         props: require('../pages/examples/usage/multiple-tables.js')
     },
+    {
+        path: '/usage/pager-styles',
+        component: Doc,
+        props: require('../pages/examples/usage/pager-styles.js')
+    },
 ];
 
 const router = new VueRouter({
