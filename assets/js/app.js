@@ -62,6 +62,11 @@ const routes = [
         component: Doc,
         props: require('../pages/examples/usage/pager-styles.js')
     },
+    {
+        path: '/api/datatable',
+        component: Doc,
+        props: require('../pages/examples/api/datatable.js')
+    },
 ];
 
 const router = new VueRouter({
