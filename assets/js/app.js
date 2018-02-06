@@ -92,5 +92,20 @@ const app = new Vue({
             this.$emit('view-code', this.show_code);
         }
     },
-    router: router
+    router: router,
+    created: function () {
+        if (!process.env.NODE_ENV || process.env.NODE_ENV == 'development') {
+            console.log('GA blocked because in development.');
+
+            return
+        }
+
+        ga('set', 'page', this.$router.currentRoute.path);
+        ga('send', 'pageview');
+
+        this.$router.afterEach((to, from) => {
+            ga('set', 'page', to.path);
+            ga('send', 'pageview');
+        });
+    }
 });
