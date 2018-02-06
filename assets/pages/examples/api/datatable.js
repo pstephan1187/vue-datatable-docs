@@ -1,6 +1,13 @@
 module.exports = {
   sections: [
     {
+      id: 'datatable',
+      title: 'Datatable',
+      content: `
+        <p>The datatable component is the main component that you will be using. It controls the display, filtering, and sorting of tabular data. The following attributes will allow you to control the component how you need.</p>
+      `,
+    },
+    {
       id: 'columns',
       title: 'Columns',
       content: `
@@ -8,35 +15,49 @@ module.exports = {
 
         <p>The columns attribute determines how the datatable will be displayed. This attribute is required and only accepts an array of objects. Each object in the array will describe the individual columns. Each column object accepts the following keys:</p>
 
-        <h3>label (required)</h3>
+        <div class="subsection">
+          <h3>label <br><sup>(required)</sup></h3>
 
-        <p>The <code>label</code> key will determine the text that shows in the table header for he given column. The label can be an empty string.</p>
+          <p>The <code>label</code> key will determine the text that shows in the table header for he given column. The label can be an empty string.</p>
+        </div>
 
-        <h3>field (one of [field, representedAs, or component is required])</h3>
+        <div class="subsection">
+          <h3>field <br><sup>(one of [field, representedAs, or component is required])</sup></h3>
 
-        <p>The <code>field</code> key is the key in the row that will be displayed in the given column. You can also use dot notation to use nested objects as well.</p>
+          <p>The <code>field</code> key is the key in the row that will be displayed in the given column. You can also use dot notation to use nested objects as well.</p>
+        </div>
 
-        <h3>representedAs (one of [field, representedAs, or component is required])</h3>
+        <div class="subsection">
+          <h3>representedAs <br><sup>(one of [field, representedAs, or component is required])</sup></h3>
 
-        <p><code>representedAs</code> is a function that accepts the row as an argument and returns a string to be used in the column (along with filtering and sorting).</p>
+          <p><code>representedAs</code> is a function that accepts the row as an argument and returns a string to be used in the column (along with filtering and sorting).</p>
+        </div>
 
-        <h3>component (one of [field, representedAs, or component is required])</h3>
+        <div class="subsection">
+          <h3>component <br><sup>(one of [field, representedAs, or component is required])</sup></h3>
 
-        <p>Sometimes you need to display something besides just a string in a table cell. In these cases, you will want to use a component. Because the table cannot inherently determing the string that the component will produce, sorting and filtering on these columns is disabled. To re-enable them, use the <code>representedAs</code> field along with the component to tell the datatable how to sort and filter the column.</p>
+          <p>Sometimes you need to display something besides just a string in a table cell. In these cases, you will want to use a component. Because the table cannot inherently determing the string that the component will produce, sorting and filtering on these columns is disabled. To re-enable them, use the <code>representedAs</code> field along with the component to tell the datatable how to sort and filter the column.</p>
 
-        <p>The component must have a <code>row</code> prop that accepts an object. The datatable will pass the row data to the component.</p>
+          <p>The component must have a <code>row</code> prop that accepts an object. The datatable will pass the row data to the component.</p>
+        </div>
 
-        <h3>align</h3>
+        <div class="subsection">
+          <h3>align</h3>
 
-        <p>The <code>align</code> field will align the text in both the header and body column in the direction defined. It accepts three options: left (default), center, and right.</p>
+          <p>The <code>align</code> field will align the text in both the header and body column in the direction defined. It accepts three options: left (default), center, and right.</p>
+        </div>
 
-        <h3>sortable</h3>
+        <div class="subsection">
+          <h3>sortable</h3>
 
-        <p>This is a boolean value that determines whether or not that column can be sorted. Sorting is enabled by default on all columns except for component columns. To disable sorting on any particular column, define <code>sortable</code> as <code>false</code>.</p>
+          <p>This is a boolean value that determines whether or not that column can be sorted. Sorting is enabled by default on all columns except for component columns. To disable sorting on any particular column, define <code>sortable</code> as <code>false</code>.</p>
+        </div>
 
-        <h3>filterable</h3>
+        <div class="subsection">
+          <h3>filterable</h3>
 
-        <p>This is a boolean value that determines whether or not that column should be utilized in filtering. Filtering is enabled by default on all columns except for component columns. To disable filtering on any particular column, define <code>filterable</code> as <code>false</code>.</p>
+          <p>This is a boolean value that determines whether or not that column should be utilized in filtering. Filtering is enabled by default on all columns except for component columns. To disable filtering on any particular column, define <code>filterable</code> as <code>false</code>.</p>
+        </div>
       `,
       examples: [
         {
@@ -124,8 +145,6 @@ module.exports = {
       id: 'data',
       title: 'Data',
       content: `
-        <h3>Data</h3>
-
         <p>This is the data that is represented by each row in the table. It must be an array of objects (or a function that returns an array objects) where each object represents each row in your table. Each key in the objects cooresponds with the <code>field</code>'s in your column declarations.</p>
       `,
       examples: [
