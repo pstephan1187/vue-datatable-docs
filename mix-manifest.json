@@ -1,6 +1,8 @@
 {
     "/public/js/app.js": "/public/js/app.js",
     "/public/css/app.css": "/public/css/app.css",
+    "/public/js/app.js.map": "/public/js/app.js.map",
+    "/public/css/app.css.map": "/public/css/app.css.map",
     "/public/css/highlighter.css": "/public/css/highlighter.css",
     "/public/js/vuejs-datatable.js": "/public/js/vuejs-datatable.js",
     "/public/css/all.css": "/public/css/all.css"
