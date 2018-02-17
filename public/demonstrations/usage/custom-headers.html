@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Vue.Js Datatable</title>
+
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .table-responsive {
+            padding-right: 0;
+            padding-left: 0;
+            border-width: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="table" class="container" data-example='{"type": "html", "label": "HTML"}'>
+        <div class="row">
+            <div id="table" class="col-xs-12 table-responsive">
+                <datatable :columns="columns" :data="rows"></datatable>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <strong>Selected Users:</strong>
+                <span v-for="(row, i) in selected_rows" :key="row.user.username">
+                    {{ row.user.username + (i == selected_rows.length -1 ? '' : ',') }}
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.js"></script>
+    <script src="./../rows.js"></script>
+    <script src="/js/vuejs-datatable.js"></script>
+    <script data-example='{"type": "javascript", "label": "Javascript"}'>
+        var eventBus = new Vue();
+
+        Vue.component('select-row', {
+                template: `<input type="checkbox" v-model="selected" @change="emitSelected">`,
+            props: ['row'],
+            data: function(){ return {
+                selected: false
+            }},
+            methods: {
+                emitSelected: function () {
+                    if(this.selected){
+                        eventBus.$emit('selected', this.row);
+                    }else{
+                        eventBus.$emit('deselected', this.row);
+                    }
+                }
+            },
+            created: function () {
+                eventBus.$on('select-all', function (selected) {
+                    this.selected = true;
+                }.bind(this));
+
+                eventBus.$on('deselect-all', function (selected) {
+                    this.selected = false;
+                }.bind(this));
+            }
+        });
+
+        Vue.component('select-all', {
+            template: `<input type="checkbox" v-model="selected" @change="emitSelection">`,
+            data: function () {
+                return {
+                    selected: false
+                }
+            },
+            methods: {
+                emitSelection: function(){
+                    eventBus.$emit(this.selected ? 'select-all' : 'deselect-all');
+                }
+            },
+            created: function(){
+                eventBus.$on('deselected', function (row) {
+                    this.selected = false;
+                }.bind(this));
+
+                eventBus.$on('all-selected', function (row) {
+                    this.selected = true;
+                }.bind(this));
+            }
+        });
+
+        new Vue({
+            el: '#table',
+            data: {
+                columns: [
+                    { label: '', component: 'select-row', headerComponent: 'select-all' },
+                    { label: 'ID', field: 'id', align: 'center', filterable: false },
+                    { label: 'Username', field: 'user.username' },
+                    { label: 'First Name', field: 'user.first_name' },
+                    { label: 'Last Name', field: 'user.last_name' },
+                    { label: 'Email', field: 'user.email', align: 'right', sortable: false },
+                    { label: 'Address', representedAs: function (row) {
+                            return row.address + ', ' + row.city + ', ' + row.state;
+                        }, align: 'right', sortable: false
+                    }
+                ],
+                rows: window.rows.slice(0, 10),
+                selected_rows: [],
+            },
+            watch: {
+                selected_rows: function(){
+                    for(var row of this.rows){
+                        if(this.selected_rows.indexOf(row) === -1){
+                            return;
+                        }
+                    }
+
+                    eventBus.$emit('all-selected');
+                }
+            },
+            created: function(){
+                eventBus.$on('selected', function(row){
+                    if(this.selected_rows.indexOf(row) === -1){
+                        this.selected_rows.push(row);
+                    }
+                }.bind(this));
+
+                eventBus.$on('deselected', function (row) {
+                    if (this.selected_rows.indexOf(row) !== -1) {
+                        let index = this.selected_rows.indexOf(row);
+
+                        this.selected_rows.splice(index, 1);
+                    }
+                }.bind(this));
+
+                eventBus.$on('select-all', function (selected) {
+                    Vue.set(this, 'selected_rows', this.rows.slice(0));
+                }.bind(this));
+
+                eventBus.$on('deselect-all', function (selected) {
+                    Vue.set(this, 'selected_rows', []);
+                }.bind(this));
+            }
+        });
+    </script>
+</body>
+
+</html>
