@@ -42,6 +42,12 @@ module.exports = {
         </div>
 
         <div class="subsection">
+          <h3>headerComponent</h3>
+
+          <p>Sometimes you need to display something besides just a string in a table header cell. In these cases, you will want to use a componentHeader. This is useful for things like select-all boxes, column selectors, etc.</p>
+        </div>
+
+        <div class="subsection">
           <h3>align</h3>
 
           <p>The <code>align</code> field will align the text in both the header and body column in the direction defined. It accepts three options: left (default), center, and right.</p>
@@ -118,6 +124,25 @@ module.exports = {
                 // sorting and filtering on this column
                 return row.id;
               }
+            }
+          `,
+        },
+        {
+          id: 'header-component',
+          type: 'javascript',
+          label: 'headerComponent',
+          content: `
+            Vue.component('select-all', {
+              template: \`
+                        <input type="checkbox" @click="$emit('select-all')">
+                        \`
+            });
+
+            //...
+
+            {
+              label: '',
+              componentHeader: 'select-all'
             }
           `,
         },
