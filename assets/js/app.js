@@ -48,6 +48,11 @@ const routes = [
         props: require('../pages/examples/usage/custom-headers.js')
     },
     {
+        path: '/usage/footers',
+        component: Doc,
+        props: require('../pages/examples/usage/footers.js')
+    },
+    {
         path: '/usage/ajax',
         component: Doc,
         props: require('../pages/examples/usage/ajax.js')
