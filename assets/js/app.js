@@ -53,6 +53,11 @@ const routes = [
         props: require('../pages/examples/usage/footers.js')
     },
     {
+        path: '/usage/selectable-rows',
+        component: Doc,
+        props: require('../pages/examples/usage/selectable-rows.js')
+    },
+    {
         path: '/usage/ajax',
         component: Doc,
         props: require('../pages/examples/usage/ajax.js')
